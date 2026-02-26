@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventix - Cartelera</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <span class="logo">🎟 EVENTIX JUAREZ</span>
+        <div id="navRight">
+            <span id="userInfo" style="margin-right: 15px;"></span>
+            <button id="authBtn" onclick="window.location.href='index.html'">Iniciar Sesión</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Tu Próxima Experiencia Comienza Aquí</h1>
+        <p>Explora los eventos más exclusivos de la ciudad</p>
+    </section>
+
+    <main class="eventos" id="eventosContainer"></main>
+
+    <script type="module">
+        import { checarSesion } from "./auth.js";
+        checarSesion(); // Solo mostramos el nombre si existe, no redirigimos aún
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body {
+  background: #f2f2f2;
+  font-family: Arial;
+  text-align: center;
+}
+
+.stadium {
+  width: 600px;
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.zona {
+  stroke: white;
+  stroke-width: 2;
+  transition: 0.3s;
+}
+
+.sombra { fill: #8e44ad; }
+.sol { fill: #f1c40f; }
+.lateral { fill: #2980b9; }
+
+.zona:hover {
+  opacity: 0.8;
+}
+
+.selected {
+  fill: #e74c3c !important;
+}   

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecciona tu Zona</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <span class="logo" onclick="window.location.href='home.html'" style="cursor:pointer">🎟 EVENTIX</span>
+        <button onclick="window.location.href='home.html'">← Volver</button>
+    </header>
+
+    <h1 style="margin-top:40px;">Selecciona tu Zona</h1>
+    
+    <div class="stadium-container">
+        <svg viewBox="0 0 800 500" id="stadium-svg">
+    <rect x="50" y="50" width="700" height="400" rx="100" fill="#252525" />
+    <g id="center-area"></g>
+    
+    <path id="SOMBRA_1" d="M200,70 L600,70 L650,140 L150,140 Z" class="zona" fill="#4a148c" />
+    <path id="SOL_1" d="M150,360 L650,360 L600,430 L200,430 Z" class="zona" fill="#fbc02d" />
+</svg>
+    </div>
+
+    <script src="estadio.js"></script>
+</body>
+</html>
