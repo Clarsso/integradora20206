@@ -1,4 +1,3 @@
-
 name: CI - Boletsure Validation
 
 on:
@@ -8,26 +7,20 @@ on:
     branches: [ "main" ]
 
 jobs:
-  validate:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout del repositorio
+      - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Verificar que exista index.html
-        run: |
-          if [ ! -f index.html ]; then
-            echo "Error: index.html no existe"
-            exit 1
-          fi
+      - name: Instalar Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-      - name: Validar sintaxis JavaScript
-        run: |
-          for file in *.js; do
-            echo "Revisando $file"
-            node --check $file
-          done
+      - name: Instalar dependencias
+        run: npm install
 
-      - name: Confirmación final
-        run: echo "Pipeline ejecutado correctamente"
+      - name: Ejecutar pruebas
+        run: npm test
