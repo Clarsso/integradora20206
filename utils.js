@@ -2,4 +2,4 @@ function calcularTotal(precio, cantidad) {
   return precio * cantidad;
 }
 
-module.exports = { calcularTotal };
+module.exports = { calcularTotal };  
