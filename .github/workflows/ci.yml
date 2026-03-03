@@ -1,1 +1,33 @@
 
+name: CI - Boletsure Validation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v3
+
+      - name: Verificar que exista index.html
+        run: |
+          if [ ! -f index.html ]; then
+            echo "Error: index.html no existe"
+            exit 1
+          fi
+
+      - name: Validar sintaxis JavaScript
+        run: |
+          for file in *.js; do
+            echo "Revisando $file"
+            node --check $file
+          done
+
+      - name: Confirmación final
+        run: echo "Pipeline ejecutado correctamente"
